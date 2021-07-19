@@ -13,6 +13,8 @@ const path=require('path')
 const cors =require('cors');
 const pageRoutes = require('./routes/admin/page')
 const initialDataRoutes = require('./routes/admin/initData');
+const orderRoutes = require('./routes/order');
+const adminOrderRoute = require('./routes/admin/order.routes');
 
 mongoose.connect(
     `mongodb+srv://lucifer:lucifer@cluster0.z30px.mongodb.net/myFirstDatabase?retryWrites=true&w=majority`,
@@ -41,6 +43,8 @@ app.use('/api',cartRoutes);
 app.use('/api',initialDataRoutes);
 app.use('/api',pageRoutes);
 app.use('/api',addressRoutes);
+app.use('/api',orderRoutes);
+app.use('/api',adminOrderRoute);
 
 
 //Listning the port 
